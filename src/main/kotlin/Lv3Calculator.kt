@@ -1,4 +1,3 @@
-import java.util.Scanner
 
 class AddOperation {
     fun add(a: Int, b: Int): Int = a + b
@@ -20,29 +19,28 @@ class DivideOperation {
 }
 
 class Lv3Calculator {
-    fun calculate(a: Int, b: Int, operator: Char): Int {
+    fun calculate(a: Int, b: Int, operator: String): Int {
         return when (operator) {
-            '+' -> AddOperation().add(a, b)
-            '-' -> SubtractOperation().subtract(a, b)
-            '*' -> MultiplyOperation().multiply(a, b)
-            '/' -> DivideOperation().divide(a, b)
+            "+" -> AddOperation().add(a, b)
+            "-" -> SubtractOperation().subtract(a, b)
+            "*" -> MultiplyOperation().multiply(a, b)
+            "/" -> DivideOperation().divide(a, b)
             else -> throw IllegalArgumentException("잘못된 연산자 입니다.")
         }
     }
 }
 
 fun main() {
-    val scanner = Scanner(System.`in`)
     val lv3Calculator = Lv3Calculator()
 
     println("첫 번째 숫자를 입력 하세요: ")
-    val a = scanner.nextInt()
+    val a = readLine()!!.toInt()
 
     println("연산자를 입력 하세요(+, -, *, / 중 하나): ")
-    val operator = scanner.next()[0]
+    val operator = readLine()!!.toString()
 
     println("두 번째 숫자를 입력 하세요: ")
-    val b = scanner.nextInt()
+    val b = readLine()!!.toInt()
 
     try {
         val result = lv3Calculator.calculate(a, b, operator)
