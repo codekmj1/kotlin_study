@@ -1,4 +1,4 @@
-
+package com.example.calculator
 class Lv2Calculator {
     var operator = "+"
 
@@ -25,13 +25,13 @@ fun main() {
     val calculator = Lv2Calculator()
 
     println("첫 번째 숫자를 입력 하세요: ")
-    val a = readLine()!!.toInt()
+    val a = readln().toInt()
 
     println("연산자를 입력 하세요(+, -, *, /, % 중 하나): ")
-    calculator.operator = readLine()!!.toString()
+    calculator.operator = readln()
 
     println("두 번째 숫자를 입력 하세요: ")
-    val b = readLine()!!.toInt()
+    val b = readln().toInt()
 
     try {
         val result = calculator.calculate(a, b)

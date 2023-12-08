@@ -1,4 +1,4 @@
-
+package com.example.calculator
 class AddOperation {
     fun add(a: Int, b: Int): Int = a + b
 }
@@ -34,13 +34,13 @@ fun main() {
     val lv3Calculator = Lv3Calculator()
 
     println("첫 번째 숫자를 입력 하세요: ")
-    val a = readLine()!!.toInt()
+    val a = readln().toInt()
 
     println("연산자를 입력 하세요(+, -, *, / 중 하나): ")
-    val operator = readLine()!!.toString()
+    val operator = readln()
 
     println("두 번째 숫자를 입력 하세요: ")
-    val b = readLine()!!.toInt()
+    val b = readln().toInt()
 
     try {
         val result = lv3Calculator.calculate(a, b, operator)
@@ -49,3 +49,4 @@ fun main() {
         println(e.message)
     }
 }
+
