@@ -15,3 +15,4 @@ open class Menu(val menuName: String, val productList: List<Product>) {
         return quantity * product.price
     }
 }
+
